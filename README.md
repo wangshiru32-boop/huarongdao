@@ -45,3 +45,25 @@ node tests/hit-regions.browser.cjs
 
 也可用 `CHROMIUM_EXECUTABLE` 指定本地 Chromium；`SCREENSHOT_DIR` 指定已存在的截图目录。
 具体覆盖范围和验证限制见 [VALIDATION.md](VALIDATION.md)。
+
+## Spring Boot 账号、积分与排行榜版
+
+`springboot-app/` 提供 Spring Boot 3 实现：
+
+- 游戏页内的登录、注册、退出和排行榜弹窗；
+- Spring MVC REST API；
+- Spring JDBC + H2 文件数据库；
+- BCrypt 密码哈希、Session 轮换和 CSRF 防护；
+- 服务端计算积分，每个经典阵型只保留最高分；
+- Spring Boot 真实 HTTP 集成测试和游戏页浏览器测试。
+
+原 `index.html`、`huarongdao/index.html`、`test/index.html` 未改动。
+
+运行方式：
+
+```powershell
+cd springboot-app
+mvn spring-boot:run
+```
+
+访问 `http://localhost:8080/huarongdao/`。详细说明见 [springboot-app/README.md](springboot-app/README.md)。

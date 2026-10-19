@@ -22,3 +22,6 @@ venv/
 dist/
 build/
 *.log
+springboot-app/target/
+springboot-app/data/
+springboot-app/dist/

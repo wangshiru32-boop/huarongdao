@@ -1,0 +1,278 @@
+/* 这些样式只在 JSP 版注入，不会影响 GitHub Pages 上的静态游戏。 */
+.server-account {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.server-account-toggle {
+  max-width: 126px;
+}
+
+.server-account-toggle .account-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.server-account-toggle .account-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.server-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 80;
+  width: 190px;
+  padding: 7px;
+  border: 1px solid #71805d;
+  border-radius: 9px;
+  background: #1c2c22f5;
+  box-shadow: 0 18px 42px #07110cb8;
+}
+
+.server-menu[hidden] { display: none !important; }
+
+.server-menu-user {
+  padding: 9px 10px 11px;
+  border-bottom: 1px solid #52634580;
+  color: #f2dfad;
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.server-menu a,
+.server-menu button {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 6px;
+  background: transparent;
+  color: #d7deca;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.server-menu a:hover,
+.server-menu button:hover {
+  background: #40513a;
+  color: #f2dfad;
+}
+
+.server-menu form { margin: 0; }
+
+.server-toast {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 100;
+  max-width: min(360px, calc(100vw - 36px));
+  padding: 12px 15px;
+  border: 1px solid #71805d;
+  border-radius: 8px;
+  background: #1c2c22f5;
+  box-shadow: 0 16px 42px #07110cb8;
+  color: #e8ead8;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.server-toast.error { border-color: #a56355; color: #ffd9d0; }
+
+.server-menu-note,
+.server-demo-note {
+  color: #aebd9c;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.server-menu-note {
+  padding: 8px 10px 10px;
+  border-bottom: 1px solid #52634580;
+}
+
+.server-demo-note {
+  margin: -7px 0 15px;
+  padding: 9px 11px;
+  border-left: 2px solid #d6b77e;
+  background: #d6b77e12;
+}
+
+.server-auth-dialog,
+.server-leaderboard-dialog {
+  width: min(430px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 26px;
+  overflow: auto;
+  border: 1px solid #71805d;
+  border-radius: 14px;
+  background: #1b2b22;
+  box-shadow: 0 28px 80px #06100ad9;
+  color: #e1e4cc;
+}
+
+.server-leaderboard-dialog { width: min(650px, calc(100vw - 32px)); }
+
+.server-auth-dialog::backdrop,
+.server-leaderboard-dialog::backdrop {
+  background: #06100abf;
+  backdrop-filter: blur(3px);
+}
+
+.server-auth-close {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: transparent;
+  color: #bcc9aa;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.server-auth-close:hover { background: #40513a; color: #f2dfad; }
+
+.server-auth-eyebrow {
+  margin: 0 0 8px;
+  color: #d6b77e;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.server-auth-title {
+  margin: 0 0 18px;
+  color: #f0ead4;
+  font: 500 26px/1.2 "Songti SC", STSong, serif;
+  letter-spacing: 2px;
+}
+
+.server-auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 17px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #14251a;
+}
+
+.server-auth-tabs button {
+  padding: 9px 6px;
+  border-radius: 5px;
+  background: transparent;
+  color: #aabd9d;
+  font-size: 14px;
+}
+
+.server-auth-tabs button[aria-selected="true"] {
+  background: #40503a;
+  color: #eee5c9;
+}
+
+.server-auth-form { display: grid; gap: 12px; }
+.server-auth-form[hidden],
+.server-auth-message[hidden] { display: none !important; }
+
+.server-auth-field {
+  display: grid;
+  gap: 7px;
+  color: #d6ddca;
+  font-size: 13px;
+}
+
+.server-auth-field input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #526345;
+  border-radius: 7px;
+  outline: none;
+  background: #102017;
+  color: #eef0df;
+  font: inherit;
+}
+
+.server-auth-field input:focus {
+  border-color: #d6b77e;
+  box-shadow: 0 0 0 3px #d6b77e26;
+}
+
+.server-auth-submit {
+  margin-top: 3px;
+  padding: 11px 14px;
+  border: 1px solid #e0c791;
+  border-radius: 7px;
+  background: #d6b77e;
+  color: #1b2419;
+  font-weight: 600;
+}
+
+.server-auth-submit:hover { background: #f2dfad; }
+.server-auth-submit:disabled { cursor: wait; opacity: .65; }
+
+.server-auth-message {
+  margin: 0 0 14px;
+  padding: 9px 11px;
+  border: 1px solid #71805d;
+  border-radius: 7px;
+  background: #203127;
+  color: #dce4cf;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.server-auth-message.error {
+  border-color: #a56355;
+  background: #512d28;
+  color: #ffd9d0;
+}
+
+.server-leaderboard-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #52634580;
+  border-radius: 9px;
+}
+
+.server-leaderboard-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+}
+
+.server-leaderboard-table th,
+.server-leaderboard-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #52634552;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.server-leaderboard-table th {
+  color: #b8c5a6;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.server-leaderboard-table tr:last-child td { border-bottom: 0; }
+.server-leaderboard-table tbody tr:hover { background: #2a3d3152; }
+.server-rank { color: #d6b77e; font-family: Georgia, serif; }
+.server-points { color: #f2dfad; font-weight: 600; }
+
+@media (max-width: 560px) {
+  .server-account-toggle { width: 36px; padding: 8px; }
+  .server-account-toggle .account-name { display: none; }
+  .server-auth-dialog,
+  .server-leaderboard-dialog { padding: 22px 18px; }
+  .server-leaderboard-table th,
+  .server-leaderboard-table td { padding: 10px 9px; }
+}

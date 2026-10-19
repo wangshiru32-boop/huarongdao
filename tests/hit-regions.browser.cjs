@@ -8,9 +8,9 @@ const root = path.resolve(__dirname, '..');
 const original = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const test = fs.readFileSync(path.join(root, 'test/index.html'), 'utf8');
 const stripped = test
-  .replace(/\/\* HIT_REGIONS_STYLE_START \*\/[\s\S]*?\/\* HIT_REGIONS_STYLE_END \*\/\n/, '')
-  .replace(/^.*<svg id="hit-regions".*\n/m, '')
-  .replace(/\/\/ HIT_REGIONS_SCRIPT_START[\s\S]*?\/\/ HIT_REGIONS_SCRIPT_END\n\n/, '')
+  .replace(/\/\* HIT_REGIONS_STYLE_START \*\/[\s\S]*?\/\* HIT_REGIONS_STYLE_END \*\/\r?\n/, '')
+  .replace(/^.*<svg id="hit-regions".*\r?\n/m, '')
+  .replace(/\/\/ HIT_REGIONS_SCRIPT_START[\s\S]*?\/\/ HIT_REGIONS_SCRIPT_END\r?\n\r?\n/, '')
   .replace('renderArrows(); renderHitRegions(); renderHints();', 'renderArrows(); renderHints();');
 assert.equal(stripped, original, 'test page must preserve every original game feature');
 assert.equal(original, fs.readFileSync(path.join(root, 'huarongdao/index.html'), 'utf8'));
